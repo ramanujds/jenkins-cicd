@@ -21,7 +21,7 @@ pipeline {
             steps{
                 script{
                   withCredentials([string(credentialsId: 'dockerhub_pwd', variable: 'dockerhub_pwd')])  {
-                   sh 'docker login -u ram1uj -p ${docker_pwd}'
+                   sh 'docker login -u ram1uj -p ${dockerhub_pwd}'
 
 }
                    sh 'docker push ram1uj/emp-app'
