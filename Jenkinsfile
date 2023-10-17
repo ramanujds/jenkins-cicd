@@ -20,8 +20,8 @@ pipeline {
         stage('Push image to Hub'){
             steps{
                 script{
-                   withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                   sh 'docker login -u ram1uj -p ${dockerhubpwd}'
+                  withCredentials([usernamePassword(credentialsId: 'b1cf5d5e-fb9c-4505-a48d-028ef165406e', passwordVariable: 'docker_pwd', usernameVariable: 'docker_user')]) {
+                   sh 'docker login -u ram1uj -p ${docker_pwd}'
 
 }
                    sh 'docker push ram1uj/emp-app'
